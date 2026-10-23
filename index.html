@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="蔡岳儒「科技綠洲・黃金十年」：北港、水林、口湖依真實地圖拼成一座島，點政見看細項。">
-<meta property="og:title" content="科技綠洲・黃金十年｜蔡岳儒">
-<meta property="og:description" content="北港、水林、口湖拼成一座科技綠洲，打造雲嘉幸福供應鏈。">
-<title>科技綠洲黃金十年</title>
+<meta name="description" content="打造科技綠洲，邀請小水滴們，來這個好吃好玩好所在，充電再出發！蔡岳儒「科技綠洲・洋流港灣」：北港、水林、口湖拼成一座島。">
+<meta property="og:title" content="科技綠洲・洋流港灣｜蔡岳儒">
+<meta property="og:description" content="打造科技綠洲，邀請小水滴們，來這個好吃好玩好所在，充電再出發！">
+<title>科技綠洲洋流港灣</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -114,6 +114,18 @@ body{background:#9fd3ee;color:var(--ink);font-family:var(--f-body);overflow:hidd
 .btn.ghost{border:1px solid var(--line);color:var(--ink-2)}
 .dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--oasis)}
 #loading{position:fixed;inset:0;display:grid;place-items:center;font-family:var(--f-display);font-size:20px;color:#0f5a32;z-index:30;background:#bfe3f3}
+#tourBar{position:fixed;z-index:8;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;padding:8px 10px 8px 16px;border-radius:999px;font-size:13px;font-weight:700;color:var(--ink);max-width:calc(100vw - 32px)}
+#tourT{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#tourBar .btn{white-space:nowrap;flex:none}
+#tourBar b{white-space:nowrap;font-family:var(--f-mono);font-size:12px;color:var(--mute);font-weight:500}#tourBar .btn{padding:6px 12px;font-size:13px}
+#tourBar[hidden]{display:none!important}
+#b-drive{position:relative;overflow:visible}
+#b-drive.attn{background:#e3f4e8;color:var(--oasis);animation:drvGlow 1.6s ease-out infinite}
+@keyframes drvGlow{0%{box-shadow:0 0 0 0 rgba(20,113,60,.6)}70%{box-shadow:0 0 0 14px rgba(20,113,60,0)}100%{box-shadow:0 0 0 0 rgba(20,113,60,0)}}
+.go-hint{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:4px;display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none;z-index:9}
+.go-hint .hand{font-size:30px;line-height:1;filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));animation:drvTap 1s ease-in-out infinite}
+@keyframes drvTap{0%,100%{transform:translateY(8px)}50%{transform:translateY(-2px)}}
+.go-hint .bubble{background:var(--oasis);color:#fff;font-size:12.5px;font-weight:900;padding:6px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(10,60,30,.3);letter-spacing:.02em}
+#b-drive:not(.attn) .go-hint{display:none}
 #sheetBtn{position:absolute;right:12px;top:12px;padding:7px 14px;font-size:13px;background:var(--panel)}
 #dayNight{all:unset;position:fixed;z-index:6;cursor:pointer;top:calc(14px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:var(--panel);border:1px solid var(--line);box-shadow:0 8px 22px var(--shadow);color:var(--oasis)}
 #dayNight svg{width:22px;height:22px}#dayNight:focus-visible{outline:3px solid var(--lagoon);outline-offset:2px}
@@ -132,10 +144,12 @@ body{background:#9fd3ee;color:var(--ink);font-family:var(--f-body);overflow:hidd
  #index.min{top:auto!important;bottom:calc(10px + env(safe-area-inset-bottom,0px))!important}
  #index.min header{padding:12px 92px 12px 16px}#index.min h1{font-size:16px}
  #index header{padding:10px 16px 6px}#index h1{font-size:20px;margin:2px 0 4px}#index p.lead,.facts{display:none}
- .seg .tl{display:none}.seg button{min-width:34px;padding:8px 7px}
+ .seg .tl{display:none}.seg{padding:3px;gap:0}.seg button{min-width:30px;padding:8px 5px}.seg button svg{width:17px;height:17px}
  #brand{max-width:calc(100vw - 92px)}#brand .who em{display:none}#brand .who{padding-left:10px}
  #detail{top:auto;height:56vh;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));width:auto;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:6}
  .lbl.town{font-size:16px;padding:3px 10px}
+ .go-hint{transform:translateX(-82%);align-items:flex-end}.go-hint .hand{margin-right:14px}
+ #tourBar{bottom:calc(84px + env(safe-area-inset-bottom,0px));left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));transform:none;max-width:none;padding:8px 8px 8px 14px;gap:8px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -148,7 +162,7 @@ body{background:#9fd3ee;color:var(--ink);font-family:var(--f-body);overflow:hidd
 <div id="labels"></div>
 
 <div id="brand" class="float card">
- <div class="mark">科技綠洲<span>黃金十年</span></div>
+ <div class="mark">科技綠洲<span>洋流港灣</span></div>
  <div class="who"><b>蔡岳儒</b><em>雲林縣議員候選人・第六選區</em><i>BEIGANG · SHUILIN · KOUHU</i></div>
 </div>
 
@@ -159,6 +173,8 @@ body{background:#9fd3ee;color:var(--ink);font-family:var(--f-body);overflow:hidd
   <button id="b-road" aria-pressed="true" title="新香路與通勤動線"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18c4-10 12 0 16-10"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="8" r="2"/></svg><span class="tl">動線</span></button>
   <button id="b-pause" aria-pressed="false" title="停止動畫"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5v14M15 5v14"/></svg><span class="tl">靜止</span></button>
   <button id="b-bird" aria-pressed="false" title="從上方俯視"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5z M3 13l9 5 9-5"/></svg><span class="tl">俯視</span></button>
+  <button id="b-voice" aria-pressed="false" title="語音導覽（開啟後點政見也會朗讀）"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg><span class="tl">語音</span></button>
+  <button id="b-drive" aria-pressed="false" title="開車導覽：小水滴從嘉義科學園區出發，往北港、水林、口湖前進"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 16V11l2-5h10l4 5h2v5"/><path d="M3 16h18"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></svg><span class="tl">開車</span><span class="go-hint" id="goHint" aria-hidden="true"><span class="hand">👆</span><span class="bubble">點這裡，開車出發！</span></span></button>
   <button id="b-style" aria-pressed="false" title="切換到漫畫描邊風格"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20c3 0 4-1.5 4-3.5S9.5 13 11 13s3 1.5 3 3.5-2 3.5-4 3.5H4z"/><path d="M13 12l7-8"/></svg><span class="tl">風格</span></button>
   <button id="b-home" aria-pressed="false" title="回到起點"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11l8-7 8 7v9H4z"/></svg><span class="tl">起點</span></button>
  </div>
@@ -170,7 +186,7 @@ body{background:#9fd3ee;color:var(--ink);font-family:var(--f-body);overflow:hidd
  <header>
   <div class="eyebrow">雲嘉幸福供應鏈</div>
   <h1>科技來了，家鄉要先準備好！</h1>
-  <p class="lead">把北港、水林、口湖拼成一座「科技綠洲」，打造雲嘉幸福供應鏈：讓家鄉成為下一個世代最好生活、最佳旅遊、最利投資的地方。</p>
+  <p class="lead">打造科技綠洲，邀請小水滴們，來這個好吃、好玩、好所在，充電再出發！北港、水林、口湖拼成一座島，打造雲嘉幸福供應鏈。</p>
   <div class="facts"><div><b>20</b>分鐘到嘉義科學園區</div><div><b>4</b>大政見主軸</div><div><b>3</b>鄉鎮各有基地</div></div>
  </header>
  <div class="tabs" role="group" aria-label="分類"><button id="tab-p" aria-pressed="true">四大政見</button><button id="tab-t" aria-pressed="false">三鄉鎮基地</button></div>
@@ -179,6 +195,7 @@ body{background:#9fd3ee;color:var(--ink);font-family:var(--f-body);overflow:hidd
  <div class="foot">紅利留在家鄉：工作在家鄉・消費在家鄉・生活在家鄉・照顧在家鄉。<br>拖曳旋轉、滾輪或雙指縮放；點島上的號碼看細項。<br>行政區界：內政部國土測繪中心（政府資料開放授權條款第1版）。</div>
 </aside>
 
+<div id="tourBar" class="card" hidden role="status"><span id="tourT">語音導覽中</span><b id="tourN"></b><button class="btn ghost" id="tourNext" type="button">下一段</button><button class="btn pri" id="tourStop" type="button">停止</button></div>
 <section id="detail" class="float card" hidden aria-live="polite"></section>
 
 <div id="intro" hidden>
@@ -206,7 +223,7 @@ const A={ // 錨點（公里座標，x 向東、z 向南）
  S_field:[6.8,-5.4,'水林鄉'],S_green:[8.4,-7.0,'水林鄉'],S_brand:[5.3,-3.2,'水林鄉'],S_slow:[7.2,-9.0,'水林鄉'],S_youth:[8.9,-4.6,'水林鄉'],S_temple:[7.4,-3.4,'水林鄉'],S_drain:[6.0,1.0,'水林鄉'],S_care:[5.4,-6.4,'水林鄉'],S_cam:[6.6,-1.2,'水林鄉'],S_home:[8.6,-1.4,'水林鄉'],
  B_temple:[13.9,-4.1,'北港鎮'],B_street:[12.9,-3.4,'北港鎮'],B_expo:[11.2,-4.7,'北港鎮'],B_hosp:[12.4,-6.7,'北港鎮'],B_tech:[15.0,-8.5,'北港鎮'],B_elder:[11.3,-8.4,'北港鎮'],B_school:[13.1,-9.6,'北港鎮'],B_house:[16.0,-6.4,'北港鎮'],B_cam:[11.9,-5.6,'北港鎮'],
  L_K:[-0.9,-0.6,'口湖鄉'],L_S:[9.4,-2.9,'水林鄉'],
- BRIDGE:[19.2,1.6,null],CSP:[24.5,6.5,null]};
+ BRIDGE:[9.9,6.2,null],CSP:[13.2,10.6,null]};
 const POL=[
  {id:'p1',no:'一',color:'#c99512',name:'人才與地方創生',tag:'培育人才・返鄉創生・文化深耕',sum:'把嘉義科學園區的機會變成家鄉少年人的出路：在地培養科技人才，讓文化和民宿留得住人。',quote:'培養咱家己的人才，就是咱未來最重要的事情！',items:[
   {t:'推動科技人才培育與轉型',d:'爭取在北港、水林、口湖設立科技職訓，協助青年在地就業，接軌科學園區的工作機會。',a:'B_tech'},
@@ -232,7 +249,7 @@ const POL=[
   {t:'接軌嘉義科技聚落',d:'距離嘉義科學園區約 20 分鐘車程：人才進來、消費進來、投資進來。',a:'CSP'}]}];
 const BASES=[
  {id:'t1',no:'口',town:'口湖鄉',color:'#3d8fd8',name:'口湖・漁業品牌基地',tag:'海線、漁村、返鄉',sum:'口湖是海線的門面：養殖漁業升級，串起海線觀光和漁村慢遊。',items:[{t:'漁業升級加值',d:'養殖漁業品牌化、科技化。',a:'K_pond'},{t:'海線觀光串接',d:'串連濕地、漁港與海岸風景。',a:'K_tour'},{t:'漁村慢遊體驗',d:'讓旅人住下來、吃在地。',a:'K_slow'},{t:'青年返鄉基地',d:'提供返鄉青年創業的起點。',a:'K_youth'}]},
- {id:'t2',no:'水',town:'水林鄉',color:'#e9a02f',name:'水林・農業加值基地',tag:'農業品牌、健康生技',sum:'水林的番薯與農產，透過加工和品牌，走進科技人的餐桌。',items:[{t:'農業品牌加值',d:'農產加工、包裝與品牌行銷。',a:'S_brand'},{t:'健康生技投資',d:'引進健康生技產業。',a:'S_green'},{t:'農村慢遊體驗',d:'田園、宮廟與小旅行。',a:'S_slow'},{t:'青年返鄉基地',d:'讓青年回來種田、創業。',a:'S_youth'}]},
+ {id:'t2',no:'水',town:'水林鄉',color:'#e9a02f',name:'水林・農業加值基地',tag:'農業品牌、健康生技',sum:'水林的番薯與農產，透過加工和品牌，走進科技人的餐桌。',items:[{t:'蕃薯產業與農業品牌加值',d:'水林蕃薯從田間種植、加工製造到包裝出貨，加工品賣進日本高級超市；要讓蕃薯產業鏈更完整，品牌更響亮。',a:'S_brand'},{t:'健康生技投資',d:'引進健康生技產業。',a:'S_green'},{t:'農村慢遊體驗',d:'田園、宮廟與小旅行。',a:'S_slow'},{t:'青年返鄉基地',d:'讓青年回來種田、創業。',a:'S_youth'}]},
  {id:'t3',no:'北',town:'北港鎮',color:'#d36aa8',name:'北港・文化商業核心',tag:'宮廟文化、美食、醫療',sum:'北港是三鄉鎮的核心：文化觀光、商業、醫療和職訓都在這裡。',items:[{t:'文化商業中心',d:'宮廟文化與老街美食。',a:'B_street'},{t:'農漁展示中心',d:'三鄉鎮農漁產品的展示窗口。',a:'B_expo'},{t:'醫療資源核心',d:'整合醫療資源，支援巡迴與遠距醫療。',a:'B_hosp'},{t:'科技職訓基地',d:'培育接軌科學園區的人才。',a:'B_tech'}]}];
 
 /* ---------- three.js 場景 ---------- */
@@ -242,7 +259,7 @@ renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;r
 const scene=new THREE.Scene();scene.fog=new THREE.Fog(0xbfe3f3,70,170);
 const camera=new THREE.PerspectiveCamera(38,innerWidth/innerHeight,.1,600);
 const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.08;controls.maxPolarAngle=1.35;controls.minDistance=6;controls.maxDistance=95;
-const CX=7,CZ=-4.5;const HOME={pos:new THREE.Vector3(CX-5,21,CZ+24),tgt:new THREE.Vector3(CX+.5,0,CZ+.5)};const BIRD={pos:new THREE.Vector3(CX+.01,62,CZ+6),tgt:new THREE.Vector3(CX,0,CZ)};
+const CX=7,CZ=-4.5;const HOME={pos:new THREE.Vector3(CX-5,23,CZ+28),tgt:new THREE.Vector3(CX+.5,0,CZ+3)};const BIRD={pos:new THREE.Vector3(CX+.01,62,CZ+6),tgt:new THREE.Vector3(CX,0,CZ)};
 if(innerWidth<=820){HOME.pos.sub(HOME.tgt).multiplyScalar(1.75).add(HOME.tgt);BIRD.pos.y*=1.5;}
 camera.position.copy(HOME.pos);controls.target.copy(HOME.tgt);
 const hemi=new THREE.HemisphereLight(0xdff3ff,0x6f8f5a,.9);scene.add(hemi);
@@ -302,7 +319,7 @@ GEO.villages.forEach(v=>{const c=TM[v.t].c;v.polys.forEach(r=>{if(cent(r)[0]<-4&
 const anim=[];
 function treesIn(tn,n,avoid){const r=TM[tn].main;let x0=1e9,x1=-1e9,z0=1e9,z1=-1e9;r.forEach(([x,z])=>{x0=Math.min(x0,x);x1=Math.max(x1,x);z0=Math.min(z0,z);z1=Math.max(z1,z);});const pts=[];let tries=0;
  while(pts.length<n&&tries++<n*40){const x=x0+Math.random()*(x1-x0),z=z0+Math.random()*(z1-z0);const sc=scaleAbout([[x,z]],TM[tn].c,1/.94)[0];if(!inside(sc,r))continue;if(avoid.some(([ax,az,rad])=>Math.hypot(ax-x,az-z)<rad))continue;pts.push([x,z]);}return pts;}
-const avoid=Object.entries(A).map(([k,[x,z]])=>[x,z,k.startsWith('L_')?1.6:k==='B_temple'?1.9:.95]);
+const avoid=Object.entries(A).map(([k,[x,z]])=>[x,z,k.startsWith('L_')?1.6:k==='B_temple'?1.9:k==='S_brand'?1.7:.95]);
 const dm=new THREE.Object3D(),tc=new THREE.Color();
 function inst(geo,m,n){const im=new THREE.InstancedMesh(geo,m,Math.max(1,n));im.count=n;im.castShadow=true;im.receiveShadow=true;scene.add(im);return im;}
 const whiteMat=()=>new THREE.MeshStandardMaterial({color:0xffffff,flatShading:true,roughness:.9});
@@ -376,7 +393,29 @@ boat(-3.9,-9.4);boat(-4.9,-6.4,'#2b8fc9');boat(-3.6,-1.2,'#f2b44b');
 bnb(...P('K_bnb'));youthBase(...P('K_youth'));school(...P('K_school'));camPole(...P('K_cam'));temple(...P('K_temple'),.55);
 {const [x,z]=P('K_slow');farmhouse(x,z);boat(x-.6,z+.7,'#7cc576');}
 field(...P('S_field'),1.8,1.4,['#7a4fa3','#6cbf5a']);field(P('S_field')[0]+.4,P('S_field')[1]+3.2,1.6,1.2,['#d9b24a','#8bc34a'],.4);field(P('S_field')[0]-1.2,P('S_field')[1]+5.6,1.4,1.2,['#6cbf5a','#a5d66f'],-.3);
-greenhouse(...P('S_green'));bldg(...P('S_brand'),.8,.4,.5,'#fff5e0','#e9a02f',true);farmhouse(...P('S_slow'));youthBase(...P('S_youth'));temple(...P('S_temple'),.6);pump(...P('S_drain'));elderCenter(...P('S_care'));camPole(...P('S_cam'));homes(...P('S_home'));
+greenhouse(...P('S_green'));// 水林蕃薯產業：蕃薯田 → 加工廠 → 包裝出貨
+function sweetPotato(x,z){const g=new THREE.Group();g.position.set(x,TOP,z);scene.add(g);
+ const potM=mat('#9b3b5a'),potM2=mat('#b4566e'),soil=mat('#8a5a35'),leaf=mat('#4f9a3c');
+ // 加工廠：鋸齒屋頂＋招牌
+ box(1.3,.48,.7,'#f6f1e6',0,0,0,g);for(let i=0;i<4;i++){const r=new THREE.Mesh(new THREE.BoxGeometry(.3,.16,.7),mat(i%2?'#e9a02f':'#d98a1f'));r.position.set(-.48+i*.32,.56,0);r.rotation.z=-.5;r.castShadow=true;g.add(r);}
+ const sc=document.createElement('canvas');sc.width=256;sc.height=64;const sx=sc.getContext('2d');sx.fillStyle='#7a2f48';sx.fillRect(0,0,256,64);sx.fillStyle='#ffe9b0';sx.font='900 38px "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif';sx.textAlign='center';sx.textBaseline='middle';sx.fillText('水林蕃薯',128,34);
+ const st=new THREE.CanvasTexture(sc);st.colorSpace=THREE.SRGBColorSpace;const sign=new THREE.Mesh(new THREE.PlaneGeometry(.7,.18),new THREE.MeshStandardMaterial({map:st,roughness:.8}));sign.position.set(0,.36,.356);g.add(sign);
+ try{document.fonts&&document.fonts.ready.then(()=>{sx.fillStyle='#7a2f48';sx.fillRect(0,0,256,64);sx.fillStyle='#ffe9b0';sx.fillText('水林蕃薯',128,34);st.needsUpdate=true;});}catch(e){}
+ box(.22,.28,.02,'#5b6770',.42,0,.356,g);cyl(.06,.07,.5,'#c9ced1',-.5,.48,-.2,8,g);
+ // 輸送帶與上面的蕃薯
+ box(1.0,.05,.16,'#3d4449',1.1,.18,.15,g);[.75,1.45].forEach(lx=>cyl(.02,.02,.18,'#3d4449',lx,0,.15,4,g));
+ const belt=[];for(let i=0;i<6;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.045,8,6),i%2?potM:potM2);p.scale.set(1.5,.8,.9);p.position.set(.65+i*.17,.25,.15);g.add(p);belt.push(p);}
+ anim.push(t=>belt.forEach((p,i)=>{p.position.x=.62+((i*.17+t*.18)%1.02);}));
+ // 包裝箱與出貨卡車
+ for(let i=0;i<3;i++)for(let k=0;k<2;k++){const c=box(.16,.12,.16,'#c9a06a',1.75+k*.18,i*.12,.15,g);}
+ const tr=new THREE.Group();tr.position.set(1.85,0,-.45);g.add(tr);box(.5,.28,.26,'#ffffff',-.05,.06,0,tr);box(.18,.2,.26,'#7a2f48',.3,.06,0,tr);[[-.2,.13],[.2,.13],[-.2,-.13],[.2,-.13]].forEach(([wx,wz])=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(.05,.05,.04,10),mat('#222222'));w.rotation.x=Math.PI/2;w.position.set(wx,.05,wz);tr.add(w);});
+ // 蕃薯田：畦壟＋心形葉＋露出的蕃薯
+ const fx=-.2,fz=1.05;for(let r=0;r<4;r++){const ridge=new THREE.Mesh(new THREE.CylinderGeometry(.09,.09,1.3,8,1,false,0,Math.PI),soil);ridge.rotation.z=Math.PI/2;ridge.position.set(fx,.0,fz+r*.24);ridge.castShadow=true;g.add(ridge);
+  for(let k=0;k<7;k++){const l=new THREE.Mesh(new THREE.ConeGeometry(.07,.05,5),leaf);l.position.set(fx-.55+k*.18,.1,fz+r*.24+(k%2?.04:-.04));l.rotation.y=k;g.add(l);}
+  if(r===3)for(let k=0;k<3;k++){const p=new THREE.Mesh(new THREE.SphereGeometry(.05,8,6),potM);p.scale.set(1.6,.8,.9);p.position.set(fx+.7+k*.12,.04,fz+r*.24+.12);g.add(p);}}
+ return g;}
+
+sweetPotato(...P('S_brand'));farmhouse(...P('S_slow'));youthBase(...P('S_youth'));temple(...P('S_temple'),.6);pump(...P('S_drain'));elderCenter(...P('S_care'));camPole(...P('S_cam'));homes(...P('S_home'));
 /* ---------- 地方代表建築 ---------- */
 // 北港朝天宮：前殿、正殿、鐘鼓樓與牌樓
 function chaotian(x,z){temple(x,z+.25,1.3);temple(x,z-1.05,1.05);
@@ -406,10 +445,15 @@ chaotian(...P('B_temple'));shops(...P('B_street'),7);shops(P('B_temple')[0]+2.0,
 // 嘉義科學園區小島＋通勤大橋
 const csp=P('CSP');{const [x,z]=csp;add(new THREE.Mesh(new THREE.CylinderGeometry(3.4,3.8,.7,6),mat('#e3c98f')),x,-.35,z);add(new THREE.Mesh(new THREE.CylinderGeometry(3.1,3.1,.16,6),mat('#cfe7d4')),x,.35,z);
  const chip=glow('#6ff0ff','#24485a');[[-1,-1,.9],[0,-.2,1.6],[1.1,.6,1.1],[-.6,1.2,.7],[1.4,-1.1,.8]].forEach(([dx,dz,h])=>{box(.8,h,.8,'#3d5668',x+dx,.43,z+dz);const s=new THREE.Mesh(new THREE.BoxGeometry(.82,.04,.82),chip);s.position.set(x+dx,.43+h*.6,z+dz);scene.add(s);});}
-const bStart=new THREE.Vector3(14.3,TOP,-2.6),bMid=new THREE.Vector3(...[P('BRIDGE')[0],1.3,P('BRIDGE')[1]]),bEnd=new THREE.Vector3(csp[0]-2.6,.5,csp[1]-1.6);
-const road=new THREE.QuadraticBezierCurve3(bStart,bMid,bEnd);const rp=road.getPoints(40);
-for(let i=0;i<rp.length-1;i++){const a=rp[i],b=rp[i+1],m=a.clone().add(b).multiplyScalar(.5),len=a.distanceTo(b);const seg=new THREE.Mesh(new THREE.BoxGeometry(.55,.08,len+.02),mat('#6b7378'));seg.position.copy(m);seg.lookAt(b);seg.castShadow=true;scene.add(seg);if(i%4===2&&m.y>.4)cyl(.05,.05,m.y,'#c9ced1',m.x,0,m.z,6);}
-const cars=[];['#f2b44b','#e74c3c','#2b8fc9','#ffffff'].forEach((c,i)=>{const car=new THREE.Group();const b=new THREE.Mesh(new THREE.BoxGeometry(.18,.1,.32),mat(c));b.position.y=.1;const tp=new THREE.Mesh(new THREE.BoxGeometry(.15,.07,.16),mat('#dbe9f1'));tp.position.y=.18;car.add(b,tp);scene.add(car);cars.push({car,o:i/4,dir:i%2?-1:1});});
+// 三座橋：嘉義科學園區分別連到北港、水林、口湖
+const BR=[['北港鎮',[14.3,-2.9]],['水林鄉',[7.0,2.8]],['口湖鄉',[1.0,2.2]]].map(([tn,[sx,sz]])=>{const[x0,z0]=snap(sx,sz,tn);const s0=new THREE.Vector3(x0,TOP,z0);const dir=new THREE.Vector3(x0-csp[0],0,z0-csp[1]).normalize();const e0=new THREE.Vector3(csp[0]+dir.x*3.2,.5,csp[1]+dir.z*3.2);
+ const m0=s0.clone().add(e0).multiplyScalar(.5);m0.y=1.45;const curve=new THREE.QuadraticBezierCurve3(s0,m0,e0);const pts=curve.getPoints(44);
+ for(let i=0;i<pts.length-1;i++){const a=pts[i],b=pts[i+1],m=a.clone().add(b).multiplyScalar(.5),len=a.distanceTo(b);const seg=new THREE.Mesh(new THREE.BoxGeometry(.83,.08,len+.02),mat('#6b7378'));seg.position.copy(m);seg.lookAt(b);seg.castShadow=true;scene.add(seg);
+  if(i%2===0){[-1,1].forEach(sd=>{const side=new THREE.Vector3(-(b.z-a.z),0,b.x-a.x).normalize().multiplyScalar(.43*sd);const r=new THREE.Mesh(new THREE.BoxGeometry(.04,.08,len+.02),mat('#e8ecee'));r.position.copy(m).add(side);r.position.y+=.07;r.lookAt(b.clone().add(side).setY(b.y+.07));scene.add(r);});}
+  if(i%4===2&&m.y>.4)[-1,1].forEach(sd=>{const side=new THREE.Vector3(-(b.z-a.z),0,b.x-a.x).normalize().multiplyScalar(.26*sd);cyl(.05,.05,m.y,'#c9ced1',m.x+side.x,0,m.z+side.z,6);});}
+ return{tn,curve,pts,s0};});
+const road=BR[0].curve,rp=BR[0].pts,bStart=BR[0].s0;
+const cars=[];['#f2b44b','#e74c3c','#2b8fc9','#ffffff','#2f9e66','#8a6fb5','#f28fb1','#ffffff','#f2b44b'].forEach((c,i)=>{const car=new THREE.Group();const cb=new THREE.Mesh(new THREE.BoxGeometry(.18,.1,.32),mat(c));cb.position.y=.1;cb.castShadow=true;const tp=new THREE.Mesh(new THREE.BoxGeometry(.15,.07,.16),mat('#dbe9f1'));tp.position.y=.18;car.add(cb,tp);car.scale.setScalar(1.3);scene.add(car);cars.push({car,o:(i%3)/3+i*.07,dir:i%2?-1:1,curve:BR[i%3].curve});});
 const roadGroup=new THREE.Group();scene.add(roadGroup);
 // 新香路：北港→水林→口湖 宮廟串聯，遶境隊伍沿路移動
 const tp=[P('B_temple'),P('S_temple'),P('K_temple')].map(([x,z])=>new THREE.Vector3(x,TOP+.06,z));
@@ -452,7 +496,7 @@ function setBeacons(list,color){beacons.clear();list.forEach(k=>{const[x,z]=A[k]
 const labelsEl=document.getElementById('labels');const LBL=[];
 function mkLabel(cls,html,pos,onclick){const el=document.createElement('div');el.className='lbl '+cls;el.innerHTML=html;labelsEl.appendChild(el);const o={el,pos:pos.clone?pos:new THREE.Vector3(...pos)};if(onclick)el.addEventListener('click',e=>{e.stopPropagation();onclick();});LBL.push(o);return o;}
 GEO.towns.forEach(t=>{const T=TOWN[t.n],[x,z]=TM[t.n].c;const b=BASES.find(b=>b.town===t.n);mkLabel('town',`${T.short}<small>${T.base}</small>`,[x,TOP+2.4,z],()=>openGroup(b)).el.style.background=T.col;});
-mkLabel('place','北港朝天宮',[A.B_temple[0],TOP+2.9,A.B_temple[1]],()=>openGroup(BASES[2]));mkLabel('place','顏厝寮・開臺第一庄',[A.L_S[0],TOP+1.9,A.L_S[1]],()=>openGroup(BASES[1]));mkLabel('place','口湖萬善祠・牽水車藏',[A.L_K[0],TOP+2.0,A.L_K[1]],()=>openGroup(BASES[0]));
+mkLabel('place','北港朝天宮',[A.B_temple[0],TOP+2.9,A.B_temple[1]],()=>openGroup(BASES[2]));mkLabel('place','水林蕃薯・加工製造',[A.S_brand[0]+.5,TOP+1.5,A.S_brand[1]+.3],()=>openGroup(BASES[1]));mkLabel('place','顏厝寮・開臺第一庄',[A.L_S[0],TOP+1.9,A.L_S[1]],()=>openGroup(BASES[1]));mkLabel('place','口湖萬善祠・牽水車藏',[A.L_K[0],TOP+2.0,A.L_K[1]],()=>openGroup(BASES[0]));
 mkLabel('place','嘉義科學園區・約 20 分鐘',[csp[0],2.4,csp[1]],()=>openItem(POL[3],3));
 mkLabel('place','外傘頂洲',(()=>{const c=cent(barPoly);return[c[0],.9,c[1]];})());
 const vilLabels=GEO.villages.filter(v=>!(v.t==='口湖鄉'&&v.c[0]<-4)).map(v=>{const l=mkLabel('vil',v.n,[v.c[0],TOP+.1,v.c[1]]);l.el.hidden=true;return l;});
@@ -479,7 +523,7 @@ function openItem(g,i){if(cur!==g){cur=g;drawList();}curItem=i;showDetail();setB
  const pl=pinLabels.find(p=>p.g===g&&p.i===i);if(pl){pl.el.classList.remove('hot');void pl.el.offsetWidth;pl.el.classList.add('hot');}if(innerWidth<=820)setSheet(true);}
 function closeDetail(){cur=null;curItem=-1;$('#detail').hidden=true;beacons.clear();drawList();updatePins();}
 function updatePins(){pinLabels.forEach(p=>{const on=cur?p.g===cur:(showTags&&p.g.id.startsWith(mode==='p'?'p':'t'));p.el.classList.toggle('dim',!on);p.el.classList.toggle('mini',!cur);});applyOffset();}
-function applyOffset(){if(innerWidth<=820){camera.clearViewOffset();return;}const d=$('#detail'),L=d.hidden?0:d.getBoundingClientRect().right,R=innerWidth-$('#index').getBoundingClientRect().left;const sh=(L-R)/2;camera.setViewOffset(innerWidth,innerHeight,-sh,0,innerWidth,innerHeight);}
+function applyOffset(){if(innerWidth<=820){camera.clearViewOffset();return;}const d=$('#detail'),L=d.hidden?0:d.getBoundingClientRect().right,R=$('#index').classList.contains('min')||(typeof drive!=='undefined'&&drive)?0:innerWidth-$('#index').getBoundingClientRect().left;const sh=(L-R)/2;camera.setViewOffset(innerWidth,innerHeight,-sh,0,innerWidth,innerHeight);}
 function syncTabs(){$('#tab-p').setAttribute('aria-pressed',mode==='p');$('#tab-t').setAttribute('aria-pressed',mode==='t');}
 $('#tab-p').onclick=()=>{mode='p';cur=null;$('#detail').hidden=true;beacons.clear();syncTabs();drawList();updatePins();};
 $('#tab-t').onclick=()=>{mode='t';cur=null;$('#detail').hidden=true;beacons.clear();syncTabs();drawList();updatePins();};
@@ -507,23 +551,133 @@ const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();let down=null;
 renderer.domElement.addEventListener('pointerdown',e=>down=[e.clientX,e.clientY]);
 renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;mouse.set(e.clientX/innerWidth*2-1,-(e.clientY/innerHeight)*2+1);ray.setFromCamera(mouse,camera);const h=ray.intersectObjects(townMeshes)[0];if(h){openGroup(BASES.find(b=>b.town===h.object.userData.town));}});
 
+/* ---------- 洋流飄帶：綠白綠配色的原創飄帶，沿著島嶼四周飄動 ---------- */
+const ribbonCanvas=document.createElement('canvas');ribbonCanvas.width=1024;ribbonCanvas.height=128;
+function paintRibbon(){const c=ribbonCanvas,x=c.getContext('2d'),W=c.width,H=c.height,band=26;
+ x.fillStyle='#ffffff';x.fillRect(0,0,W,H);x.fillStyle='#14713c';x.fillRect(0,0,W,band);x.fillRect(0,H-band,W,band);
+ x.fillStyle='#ffe600';x.fillRect(0,band,W,4);x.fillRect(0,H-band-4,W,4);
+ x.textBaseline='middle';x.textAlign='center';x.fillStyle='#0f5a32';x.font='900 58px "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif';
+ x.fillText('科技綠洲',W*.27,H/2+2);x.fillText('洋流港灣',W*.73,H/2+2);
+ x.fillStyle='#f2b233';[W*.5,W*.0+6,W-6].forEach(cx=>{x.beginPath();x.arc(cx,H/2,9,0,Math.PI*2);x.fill();});
+ x.fillStyle='#ffffff';x.font='700 15px "JetBrains Mono",ui-monospace,monospace';for(let i=0;i<8;i++){x.fillText('2026.11.28',64+i*128,band/2+1);x.fillText('蔡岳儒',64+i*128,H-band/2+1);}
+ try{ribbonTex.needsUpdate=true;}catch(e){}try{ribbonTexB.needsUpdate=true;}catch(e){}}
+const ribbonTex=new THREE.CanvasTexture(ribbonCanvas);ribbonTex.colorSpace=THREE.SRGBColorSpace;ribbonTex.wrapS=THREE.RepeatWrapping;ribbonTex.anisotropy=4;paintRibbon();
+try{document.fonts&&document.fonts.ready.then(()=>paintRibbon());}catch(e){}
+// 橋面花紋：用飄帶貼圖鋪在三座橋上
+const deckMat=new THREE.MeshStandardMaterial({map:ribbonTex,roughness:.75});deckMat.userData.outlineParameters={visible:false};
+BR.forEach(b=>{const pts=b.pts,n=pts.length,W=.78,pos=new Float32Array(n*2*3),uv=new Float32Array(n*2*2),idx=[];let acc=0;
+ for(let i=0;i<n;i++){const p=pts[i],q=pts[Math.min(n-1,i+1)],r=pts[Math.max(0,i-1)];const t=new THREE.Vector3().subVectors(q,r).setY(0).normalize();const side=new THREE.Vector3(-t.z,0,t.x).multiplyScalar(W/2);
+  if(i>0)acc+=p.distanceTo(pts[i-1]);const y=p.y+.05;pos.set([p.x-side.x,y,p.z-side.z,p.x+side.x,y,p.z+side.z],i*6);const u=acc/(W*8);uv.set([u,1,u,0],i*4);if(i<n-1){const a=i*2;idx.push(a,a+1,a+2,a+1,a+3,a+2);}}
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('uv',new THREE.BufferAttribute(uv,2));g.setIndex(idx);g.computeVertexNormals();
+ const m=new THREE.Mesh(g,deckMat);m.receiveShadow=true;scene.add(m);});
+
+
 /* 3D 風格：低多邊形 ／ 漫畫描邊 */
 const outline=new OutlineEffect(renderer,{defaultThickness:.0058,defaultColor:[.06,.11,.08],defaultAlpha:1});
 const gradTex=(()=>{const d=new Uint8Array([150,150,150,255,255,255,255,255]);const t=new THREE.DataTexture(d,2,1);t.minFilter=t.magFilter=THREE.NearestFilter;t.needsUpdate=true;return t;})();
 const TOON=new Map();let style='poly';const NOLINE={visible:false};
 [seaMat,foamMat,skyDome.material].forEach(m=>m.userData.outlineParameters=NOLINE);
-function toonOf(m){if(!(m&&m.isMeshStandardMaterial))return m;let t=TOON.get(m);if(!t){t=new THREE.MeshToonMaterial({color:m.color.clone().offsetHSL(0,.14,.03),map:m.map||null,gradientMap:gradTex,emissive:m.emissive.clone(),emissiveIntensity:m.emissiveIntensity,vertexColors:m.vertexColors,transparent:m.transparent,opacity:m.opacity,side:m.side});t.userData.src=m;if(m.userData.outlineParameters)t.userData.outlineParameters=m.userData.outlineParameters;TOON.set(m,t);}return t;}
+function toonOf(m){if(!(m&&m.isMeshStandardMaterial)||m.isMeshPhysicalMaterial)return m;let t=TOON.get(m);if(!t){t=new THREE.MeshToonMaterial({color:m.color.clone().offsetHSL(0,.14,.03),map:m.map||null,gradientMap:gradTex,emissive:m.emissive.clone(),emissiveIntensity:m.emissiveIntensity,vertexColors:m.vertexColors,transparent:m.transparent,opacity:m.opacity,side:m.side});t.userData.src=m;if(m.userData.outlineParameters)t.userData.outlineParameters=m.userData.outlineParameters;TOON.set(m,t);}return t;}
 function setStyle(st){style=st;window.ISL_TOON=st==='toon';setTime(curTime);scene.traverse(o=>{if(!o.isMesh||o===skyDome)return;if(o.userData.std===undefined)o.userData.std=o.material;o.material=st==='toon'?toonOf(o.userData.std):o.userData.std;});
  const b=$('#b-style');b.setAttribute('aria-pressed',st==='toon');b.title=st==='toon'?'切換回低多邊形風格':'切換到漫畫描邊風格';b.querySelector('.tl').textContent=st==='toon'?'漫畫':'風格';try{localStorage.setItem('kjlz_island_style',st);}catch(e){}}
 $('#b-style').onclick=()=>setStyle(style==='toon'?'poly':'toon');
 {let s0='poly';try{s0=localStorage.getItem('kjlz_island_style')||'poly';}catch(e){}if(s0==='toon')setStyle('toon');}
+/* ---------- 語音說明（瀏覽器內建語音，台灣華語優先） ---------- */
+const TTS='speechSynthesis' in window&&'SpeechSynthesisUtterance' in window;let voiceOn=false,inTour=false,tourIdx=-1,zhVoice=null,sayToken=0;
+function pickVoice(){try{const vs=speechSynthesis.getVoices();zhVoice=vs.find(v=>/zh[-_]TW/i.test(v.lang))||vs.find(v=>/zh[-_](HK|Hant)/i.test(v.lang))||vs.find(v=>/^zh/i.test(v.lang))||null;}catch(e){}}
+if(TTS){pickVoice();try{speechSynthesis.onvoiceschanged=pickVoice;}catch(e){}}
+const clean=t=>String(t).replace(/[「」『』]/g,'').replace(/・/g,'，');
+function say(text,onend){if(!TTS){onend&&setTimeout(onend,600);return;}const my=++sayToken;try{speechSynthesis.cancel();}catch(e){}
+ const parts=clean(text).split(/(?<=[。！？；])/).map(x=>x.trim()).filter(Boolean);let i=0;
+ const next=()=>{if(my!==sayToken)return;if(i>=parts.length){onend&&onend();return;}const u=new SpeechSynthesisUtterance(parts[i++]);u.lang=zhVoice?.lang||'zh-TW';if(zhVoice)u.voice=zhVoice;u.rate=1;u.pitch=1;u.onend=next;u.onerror=next;speechSynthesis.speak(u);};next();}
+function hush(){sayToken++;try{speechSynthesis.cancel();}catch(e){}}
+const NUM='一二三四五六七八九十';
+const groupText=g=>(g.town?`${g.name}。`:`政見${g.no}，${g.name}。`)+g.sum+(g.quote?`蔡岳儒說：${g.quote}`:'')+g.items.map((it,i)=>`第${NUM[i]}，${it.t}。`).join('');
+const itemText=(g,i)=>`${g.name}，第${NUM[i]}項，${g.items[i].t}。${g.items[i].d}`;
+const TOUR=[{run:()=>{closeDetail();fly(HOME.pos.clone(),HOME.tgt.clone());},text:'歡迎來到科技綠洲，洋流港灣。打造科技綠洲，邀請小水滴們，來這個好吃好玩好所在，充電再出發！這座島由北港、水林、口湖三個鄉鎮，依照真實地圖拼成。'},
+ ...POL.map(g=>({run:()=>openGroup(g),text:groupText(g)})),
+ ...BASES.map(g=>({run:()=>openGroup(g),text:groupText(g)})),
+ {run:()=>{closeDetail();fly(HOME.pos.clone(),HOME.tgt.clone());},text:'人才進來，消費進來，投資進來，紅利留在家鄉。科技綠洲，洋流港灣，蔡岳儒。'}];
+function tourStep(k){if(!inTour)return;if(k>=TOUR.length){stopTour(true);return;}tourIdx=k;$('#tourN').textContent=`${k+1} / ${TOUR.length}`;TOUR[k].run();say(TOUR[k].text,()=>{if(inTour)setTimeout(()=>tourStep(k+1),700);});}
+function startTour(){inTour=true;$('#tourT').textContent='語音導覽中';$('#tourBar').hidden=false;if(innerWidth<=820)setSheet(true);tourStep(0);}
+function stopTour(done){inTour=false;$('#tourBar').hidden=true;if(!done)hush();}
+function setVoice(on){voiceOn=on;$('#b-voice').setAttribute('aria-pressed',on);if(on)startTour();else{stopTour();hush();}}
+$('#b-voice').onclick=()=>{if(!TTS){toastMsg('這個瀏覽器不支援語音朗讀，請改用 Chrome 或 Safari。');return;}setVoice(!voiceOn);};
+$('#tourNext').onclick=()=>{hush();tourStep(tourIdx+1);};$('#tourStop').onclick=()=>setVoice(false);
+function toastMsg(t){const el=$('#tourBar');el.hidden=false;$('#tourN').textContent='';$('#tourT').textContent=t;setTimeout(()=>{if(!inTour){el.hidden=true;$('#tourT').textContent='語音導覽中';}},3500);}
+// 開著語音時，點政見或細項就朗讀
+const _openGroupV=openGroup;openGroup=function(g){_openGroupV(g);if(voiceOn&&!inTour)say(groupText(g));};
+const _openItemV=openItem;openItem=function(g,i){_openItemV(g,i);if(voiceOn){if(inTour){inTour=false;$('#tourBar').hidden=true;}say(itemText(g,i));}};
+const _closeV=closeDetail;closeDetail=function(){_closeV();if(voiceOn&&!inTour)hush();};
+
+/* ---------- 開車導覽：宣傳車沿路介紹 ---------- */
+/* ---------- 開車導覽：小水滴開車 ---------- */
+const truck=new THREE.Group();let signMat=null;
+{const red=new THREE.MeshStandardMaterial({color:0xc8102e,roughness:.35,metalness:.25}),glass=new THREE.MeshStandardMaterial({color:0x1d2b36,roughness:.15,metalness:.4}),blk=mat('#1d1f22'),chrome=new THREE.MeshStandardMaterial({color:0xd7dde0,roughness:.25,metalness:.8});
+ const body=new THREE.Mesh(new THREE.BoxGeometry(.4,.2,.78),red);body.position.set(0,.19,0);truck.add(body);
+ const cab=new THREE.Mesh(new THREE.BoxGeometry(.37,.17,.5),red);cab.position.set(0,.375,-.06);truck.add(cab);
+ const ws=new THREE.Mesh(new THREE.BoxGeometry(.33,.13,.02),glass);ws.position.set(0,.37,.2);ws.rotation.x=-.32;truck.add(ws);
+ const rw=new THREE.Mesh(new THREE.BoxGeometry(.33,.12,.02),glass);rw.position.set(0,.375,-.315);truck.add(rw);
+ [-1,1].forEach(sd=>{const sw=new THREE.Mesh(new THREE.BoxGeometry(.01,.11,.42),glass);sw.position.set(sd*.188,.38,-.06);truck.add(sw);});
+ [-1,1].forEach(sd=>{const rail=new THREE.Mesh(new THREE.BoxGeometry(.03,.025,.44),chrome);rail.position.set(sd*.14,.475,-.06);truck.add(rail);});
+ const bump=new THREE.Mesh(new THREE.BoxGeometry(.41,.06,.04),blk);bump.position.set(0,.12,.4);truck.add(bump);const bump2=bump.clone();bump2.position.z=-.4;truck.add(bump2);
+ const grill=new THREE.Mesh(new THREE.BoxGeometry(.2,.06,.01),blk);grill.position.set(0,.22,.395);truck.add(grill);
+ const lamp=glow('#fff6d0','#f4f4f4');[-.14,.14].forEach(lx=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.07,.04,.01),lamp);h.position.set(lx,.23,.396);truck.add(h);});
+ const tail=glow('#ff3b3b','#8a1020');[-.15,.15].forEach(lx=>{const h=new THREE.Mesh(new THREE.BoxGeometry(.06,.05,.01),tail);h.position.set(lx,.24,-.396);truck.add(h);});
+ const spare=new THREE.Mesh(new THREE.CylinderGeometry(.075,.075,.05,14),blk);spare.rotation.x=Math.PI/2;spare.position.set(0,.22,-.42);truck.add(spare);
+ signMat=new THREE.MeshStandardMaterial({color:0xc8102e,roughness:.5});
+ [-1,1].forEach(sd=>{const p=new THREE.Mesh(new THREE.PlaneGeometry(.42,.12),signMat);p.position.set(sd*.202,.19,0);p.rotation.y=sd*Math.PI/2;truck.add(p);});
+ [[-.2,.25],[.2,.25],[-.2,-.25],[.2,-.25]].forEach(([wx,wz])=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(.085,.085,.07,16),blk);w.rotation.z=Math.PI/2;w.position.set(wx,.085,wz);truck.add(w);const hub=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,.075,10),chrome);hub.rotation.z=Math.PI/2;hub.position.set(wx,.085,wz);truck.add(hub);});
+ truck.traverse(o=>{if(o.isMesh)o.castShadow=true;});truck.scale.setScalar(1.4);truck.visible=false;scene.add(truck);}
+
+
+function paintSign(){const c=document.createElement('canvas');c.width=512;c.height=208;const x=c.getContext('2d');x.fillStyle='#c8102e';x.fillRect(0,0,512,208);x.fillStyle='#ffffff';x.textAlign='center';x.textBaseline='middle';x.font='900 104px "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif';x.fillText('蔡岳儒',256,84);x.fillStyle='#ffffff';x.font='700 44px "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif';x.fillText('科技綠洲・洋流港灣',256,170);
+ const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;signMat.map=t;signMat.color.set('#ffffff');signMat.needsUpdate=true;const tm=TOON.get(signMat);if(tm){tm.map=t;tm.needsUpdate=true;}}
+const DSTOP=[
+ {k:'CSP',name:'嘉義科學園區',text:'小水滴們，我們從嘉義科學園區出發！開車大約二十分鐘，往北港、水林、口湖前進，到這個好吃、好玩、好所在，充電再出發！'},
+ {k:'B_temple',name:'北港鎮・朝天宮',text:'第一站，北港鎮朝天宮。科技來了，家鄉要先準備好。北港是三鄉鎮的文化商業核心，蔡岳儒要推動北港文化商業升級，打造新香路與文化慢遊。'},
+ {k:'B_street',name:'北港美食街',text:'北港市區有超過五百間美食店家。要輔導在地小吃品牌化，讓科技聚落的人來消費。'},
+ {k:'B_hosp',name:'醫療資源核心',text:'北港也是醫療資源核心。要強化巡迴醫療與遠距醫療，讓長者看病免走遠。'},
+ {k:'B_tech',name:'科技職訓基地',text:'這是科技職訓基地。培育在地科技人才，讓少年人在家鄉就有頭路。'},
+ {k:'S_green',name:'水林鄉・健康生技',text:'接下來進入水林鄉。水林是農業加值基地，番薯和農產要品牌加值，並導入健康生技投資。'},
+ {k:'L_S',name:'顏厝寮・開臺第一庄',text:'這裡是顏厝寮，開臺第一庄。要串聯宮廟與農村，發展農村慢遊體驗。'},
+ {k:'S_brand',name:'水林蕃薯・加工製造',text:'這裡是水林的蕃薯產業。從蕃薯田、加工廠到包裝出貨，水林蕃薯加工後賣進日本高級超市。要讓蕃薯產業鏈更完整，好產品賣好價錢。'},
+ {k:'S_drain',name:'排水防災',text:'強化道路排水與防災，讓社區更安全。'},
+ {k:'L_K',name:'口湖鄉・萬善祠',text:'最後來到口湖鄉。這裡是口湖萬善祠，牽水車藏是國家重要民俗。口湖是漁業品牌基地。'},
+ {k:'K_pond',name:'口湖養殖漁業',text:'口湖的鰻魚與文蛤養殖要升級加值，讓好漁產賣好價錢。'},
+ {k:'K_school',name:'校園 AI 教育',text:'推動校園 AI 教育，囡仔放學有人顧，囡仔作伙學 AI。'},
+ {k:'K_tour',name:'海線觀光',text:'終點是口湖海線，小水滴們在這裡充電再出發。串起海線觀光與漁村慢遊。科技綠洲，洋流港灣。北港、水林、口湖，拜託支持蔡岳儒！'}];
+const stopPt=k=>k==='CSP'?(()=>{const e=rp[rp.length-1];return new THREE.Vector3(A.CSP[0]+(e.x-A.CSP[0])*.9,.5,A.CSP[1]+(e.z-A.CSP[1])*.9);})():new THREE.Vector3(A[k][0],TOP+.02,A[k][1]+.9);
+function legCurve(i){const a=stopPt(DSTOP[i].k),b=stopPt(DSTOP[i+1].k);let pts;
+ if(DSTOP[i].k==='CSP'){pts=[a,...rp.slice().reverse().map(p=>new THREE.Vector3(p.x,p.y+.06,p.z)),new THREE.Vector3(bStart.x-.3,TOP+.02,bStart.z-.4),b];}
+ else{const m=new THREE.Vector3((a.x+b.x)/2,TOP+.02,(a.z+b.z)/2);pts=[a,m,b];}
+ return new THREE.CatmullRomCurve3(pts,false,'centripetal');}
+let drive=null;const camWant=new THREE.Vector3(),flat=new THREE.Vector3();
+function startLeg(i){if(!drive)return;drive.i=i;drive.c=legCurve(i);drive.len=Math.max(.5,drive.c.getLength());drive.u=0;drive.lt=null;drive.wait=false;$('#tourT').textContent=`開車導覽：往 ${DSTOP[i+1].name}`;}
+function arrive(i){if(!drive)return;drive.wait=true;drive.i=i;const s=DSTOP[i];$('#tourT').textContent=`開車導覽：${s.name}`;$('#tourN').textContent=`${i+1} / ${DSTOP.length}`;setBeacons([s.k],'#14713c');
+ const go=()=>{if(!drive||drive.i!==i||!drive.wait)return;if(i>=DSTOP.length-1){stopDrive();return;}setTimeout(()=>{if(drive&&drive.i===i&&drive.wait)startLeg(i);},500);};
+ if(TTS)say(s.text,go);else setTimeout(go,4500);}
+function startDrive(){setTimeout(applyOffset,0);if(inTour||voiceOn){stopTour();voiceOn=false;$('#b-voice').setAttribute('aria-pressed',false);}hush();paintSign();closeDetail();setSheet(true);flyT=null;controls.enabled=false;
+ drive={i:0,wait:true};const p=stopPt(DSTOP[0].k),nx=new THREE.Vector3(rp[rp.length-1].x,p.y,rp[rp.length-1].z);truck.position.copy(p);truck.lookAt(nx.x,p.y,nx.z);truck.visible=true;
+ {const f=new THREE.Vector3(nx.x-p.x,0,nx.z-p.z).normalize();camera.position.set(p.x-f.x*3.4,p.y+4.2,p.z-f.z*3.4);}controls.target.copy(p);$('#tourBar').hidden=false;$('#tourNext').textContent='下一站';$('#b-drive').setAttribute('aria-pressed',true);arrive(0);}
+function stopDrive(){drive=null;hush();truck.visible=false;controls.enabled=true;$('#tourBar').hidden=true;$('#tourNext').textContent='下一段';$('#b-drive').setAttribute('aria-pressed',false);beacons.clear();fly(HOME.pos.clone(),HOME.tgt.clone());}
+function driveNext(){if(!drive)return;hush();if(drive.wait){if(drive.i>=DSTOP.length-1){stopDrive();return;}startLeg(drive.i);}else{drive.u=1;}}
+anim.push(t=>{if(!drive)return;if(!drive.wait){const dt=drive.lt==null?0:Math.min(.3,t-drive.lt);drive.lt=t;drive.u=Math.min(1,drive.u+dt*1.6/drive.len);
+  const p=drive.c.getPointAt(drive.u),q=drive.c.getPointAt(Math.min(1,drive.u+.02));truck.position.copy(p);if(q.distanceTo(p)>1e-4)truck.lookAt(q.x,p.y,q.z);
+  if(drive.u>=1)arrive(drive.i+1);}
+ flat.set(0,0,1).applyQuaternion(truck.quaternion).setY(0).normalize();camWant.copy(truck.position).addScaledVector(flat,-3.4);camWant.y=truck.position.y+(drive.i===0&&drive.wait?4.2:2.4);camera.position.lerp(camWant,.05);controls.target.lerp(truck.position,.1);});
+$('#b-drive').onclick=()=>{$('#b-drive').classList.remove('attn');try{localStorage.setItem('kjlz_drive_seen','1');}catch(e){}drive?stopDrive():startDrive();};
+{let seen=false;try{seen=localStorage.getItem('kjlz_drive_seen')==='1';}catch(e){}if(!seen)$('#b-drive').classList.add('attn');}
+$('#tourNext').onclick=()=>{if(drive)driveNext();else{hush();tourStep(tourIdx+1);}};
+$('#tourStop').onclick=()=>{if(drive)stopDrive();else setVoice(false);};
+
 /* 迴圈 */
 const v3=new THREE.Vector3();let time=0,last=performance.now();
-function tick(now){requestAnimationFrame(tick);const dt=Math.min(.05,(now-last)/1000);last=now;if(!paused)time+=dt;
+function tick(now){requestAnimationFrame(tick);const dt=Math.min(.25,(now-last)/1000);last=now;if(!paused)time+=dt;
  if(flyT){const k=Math.min(1,(now-flyT.s)/flyT.d),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;camera.position.lerpVectors(flyT.p0,flyT.p1,e);controls.target.lerpVectors(flyT.t0,flyT.t1,e);if(k>=1)flyT=null;}
  controls.update();
  if(!paused){anim.forEach(f=>f(time));for(let i=0;i<seaPos.count;i+=1){const x=seaBase[i*3],z=seaBase[i*3+2];seaPos.array[i*3+1]=Math.sin(x*.35+time*1.2)*.045+Math.cos(z*.42+time*.9)*.035-.03;}seaPos.needsUpdate=true;
-  cars.forEach(c=>{let u=(time*.06*c.dir+c.o)%1;if(u<0)u+=1;const p=road.getPoint(u),q=road.getPoint(Math.min(1,Math.max(0,u+.01*c.dir)));c.car.position.set(p.x+(c.dir>0?.12:-.12),p.y+.04,p.z);c.car.lookAt(q.x,q.y+.04,q.z);});
+  cars.forEach((c,ci)=>{let u=(time*.06*c.dir+c.o)%1;if(u<0)u+=1;const p=c.curve.getPoint(u),q=c.curve.getPoint(Math.min(1,Math.max(0,u+.01*c.dir)));{const tg=c.curve.getTangent(u),sd=(c.dir>0?.2:-.2),hop=Math.abs(Math.sin(time*7+ci*1.3));c.car.position.set(p.x-tg.z*sd,p.y+.05,p.z+tg.x*sd);const bd=c.car.userData.body;if(bd){bd.position.y=hop*.1;bd.scale.set(1+(1-hop)*.1,1-(1-hop)*.12,1+(1-hop)*.1);}const sh=c.car.userData.shadow;if(sh){const k=1-hop*.35;sh.scale.set(k,k,k);sh.material.opacity=.2-hop*.08;}}c.car.lookAt(q.x,c.car.position.y,q.z);});
   const u=(time*.025)%1,p=incense.getPoint(u),q=incense.getPoint(Math.min(.999,u+.01));procession.position.copy(p);procession.lookAt(q);procession.rotateY(Math.PI/2);
   beacons.children.forEach((b,i)=>{if(b.geometry.type==='TorusGeometry'){const s=1+Math.sin(time*3)*.12;b.scale.set(s,s,s);}});}
  if(style==='toon'){TOON.forEach(t=>{const m=t.userData.src;t.emissiveIntensity=m.emissiveIntensity;t.color.copy(m.color).offsetHSL(0,.14,.03);});outline.render(scene,camera);}else renderer.render(scene,camera);
@@ -533,7 +687,7 @@ addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);camera.a
 $('#loading').hidden=true;
 
 /* 導覽 */
-const STEPS=[['科技綠洲・黃金十年','北港、水林、口湖依真實地圖拼成一座島。口湖藍、水林橘、北港粉紅，每塊都是科技綠洲的一片拼圖。'],['四大政見，對應島上的地點','右邊是政策索引。點一項政見，鏡頭會飛到島上，光圈標出它在哪個鄉鎮做什麼。'],['接軌嘉義科學園區','東南方的大橋通往嘉義科學園區，約 20 分鐘車程。右上角可以切換白天和夜晚，也可以打開村里界線。']];
+const STEPS=[['科技綠洲・洋流港灣','打造科技綠洲，邀請小水滴們，來這個好吃好玩好所在，充電再出發！北港、水林、口湖依真實地圖拼成一座島。口湖藍、水林橘、北港粉紅，每塊都是科技綠洲的一片拼圖。'],['四大政見，對應島上的地點','右邊是政策索引。點一項政見，鏡頭會飛到島上，光圈標出它在哪個鄉鎮做什麼。'],['三座橋接軌嘉義科學園區','南方的嘉義科學園區有三座大橋，分別通往北港、水林、口湖，開車大約 20 分鐘。按「開車」讓小水滴帶你出發；右上角可以切換白天和夜晚。']];
 let st=0;const intro=$('#intro');function showStep(){const[s,p]=STEPS[st];$('#introE').textContent=`0${st+1} / 0${STEPS.length}`;$('#introT').textContent=s;$('#introP').textContent=p;document.querySelectorAll('#introDots i').forEach((d,i)=>d.classList.toggle('on',i===st));$('#introNext').textContent=st===STEPS.length-1?'開始探索':'下一步';}
 let seen=false;try{seen=localStorage.getItem('kjlz_island_intro')==='1';}catch(e){}
 const endIntro=()=>{intro.hidden=true;try{localStorage.setItem('kjlz_island_intro','1');}catch(e){}};
